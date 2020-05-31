@@ -82,4 +82,5 @@ unzip pretrained_pc.zip
 </p>
 
 ## References
-- FFJORD: https://github.com/rtqichen/ffjord
+- PointFlow: https://github.com/stevenygd/PointFlow
+- WaveGlow: https://github.com/NVIDIA/waveglow
