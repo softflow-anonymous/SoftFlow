@@ -39,7 +39,7 @@ python generate2.py --data 2spirals_1d --load_path pretrained_toy/2spirals_1d/ch
 ```
 
 ## Pre-trained models
-- Click this [link](https://drive.google.com/open?id=19VzLEOZkr8swP24KUu7EikDpwsy6SX3y) to download the pre-trained models.
+- Click this [link](https://drive.google.com/open?id=1hzVzatm-JVUrPpYUAg1CHyHUqrsALJVf) to download the pre-trained models.
 ```
 unzip pretrained_toy.zip
 ```
