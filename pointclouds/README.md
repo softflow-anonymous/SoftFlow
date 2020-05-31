@@ -70,15 +70,17 @@ unzip pretrained_pc.zip
 ```
 
 ## Results
-1. Samples from SoftPointFlowFlow (`generate1.py`)
+1. Samples from SoftPointFlow (`generate1.py`)
 - Airplane
 <p align="center">
     <img src="assets/generate1/airplane/seen/result_seen_2.png" height=200/>
 </p>
+
 - Chair
 <p align="center">
     <img src="assets/generate1/chair/seen/result_seen_2.png" height=200/>
 </p>
+
 - Car
 <p align="center">
     <img src="assets/generate1/car/seen/result_seen_2.png" height=200/>
