@@ -27,7 +27,7 @@ To generate samples from the model, run:
 CUDA_VISIBLE_DEVICES=0 bash scripts/generate1.sh
 ```
 
-or you can use the pretrained model:
+or you can sample from the pretrained model:
 ```generate1_pretrained
 CUDA_VISIBLE_DEVICES=0 bash scripts/generate1_pretrained.sh
 ```
@@ -37,14 +37,14 @@ To generate samples with the different latent variable distributions, run:
 ```generate2
 CUDA_VISIBLE_DEVICES=0 bash scripts/generate2.sh
 ```
-or you can use the pretrained model:
+or you can sample from the pretrained model:
 ```generate2_pretrained
 CUDA_VISIBLE_DEVICES=0 bash scripts/generate2_pretrained.sh
 ```
 
 ## Evaluation
 
-Requirements (see `install.sh` in [here](https://github.com/stevenygd/PointFlow), we tested the code with pytorch 1.0.1 and gcc 7.5):
+Requirements (We tested the code with pytorch 1.0.1 and gcc 7.5. See `install.sh` in [here](https://github.com/stevenygd/PointFlow).):
 ```requirements
 cd metrics/pytorch_structural_losses/
 make clean
@@ -57,7 +57,7 @@ To evaluate the model, run:
 CUDA_VISIBLE_DEVICES=0 bash scripts/evaluate.sh
 ```
 
-or you can evaluate the pretrained the model:
+or you can evaluate the pretrained model:
 
 ```evaluate_pretrained
 CUDA_VISIBLE_DEVICES=0 bash scripts/evaluate_pretrained.sh
