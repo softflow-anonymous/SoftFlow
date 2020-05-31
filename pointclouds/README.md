@@ -73,22 +73,22 @@ unzip pretrained_pc.zip
 1. Samples from SoftPointFlowFlow (`generate1.py`)
 - Airplane
 <p align="center">
-    <img src="assets/generate1/airplane/seen/result_seen_2.png" height=256/>
+    <img src="assets/generate1/airplane/seen/result_seen_2.png" height=200/>
 </p>
 - Chair
 <p align="center">
-    <img src="assets/generate1/chair/seen/result_seen_2.png" height=256/>
+    <img src="assets/generate1/chair/seen/result_seen_2.png" height=200/>
 </p>
 - Car
 <p align="center">
-    <img src="assets/generate1/car/seen/result_seen_2.png" height=256/>
+    <img src="assets/generate1/car/seen/result_seen_2.png" height=200/>
 </p>
 
 2. Samples with the different latent variable distributions (`generate2.py`)
 
 - Chair
 <p align="center">
-    <img src="assets/generate2/chair/result_1.png" height=128/>
+    <img src="assets/generate2/chair/result_1.png" height=100/>
 </p>
 
 ## References
