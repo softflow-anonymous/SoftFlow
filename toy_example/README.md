@@ -50,11 +50,13 @@ unzip pretrained_toy.zip
 |               | 2spirals | swissroll | circles | 2sines | target |
 |:-------------:|:--------:|:---------:|:-------:|:------:|:------:|
 |      Data     |<img src="generate1/2spirals_1d/sample_data.png" height=150/>|<img src="generate1/swissroll_1d/sample_data.png" height=150/>|<img src="generate1/circles_1d/sample_data.png" height=150/>|<img src="generate1/2sines_1d/sample_data.png" height=150/>|<img src="generate1/target_1d/sample_data.png" height=150/>|
-| SoftPointFlow |<img src="generate1/2spirals_1d/sample_softflow.png" height=150/>|<img src="generate1/swissroll_1d/sample_softflow.png" height=150/>|<img src="generate1/circles_1d/sample_softflow.png" height=150/>|<img src="generate1/2sines_1d/sample_softflow.png" height=150/>|<img src="generate1/target_1d/sample_softflow.png" height=150/>|
+| SoftFlow |<img src="generate1/2spirals_1d/sample_softflow.png" height=150/>|<img src="generate1/swissroll_1d/sample_softflow.png" height=150/>|<img src="generate1/circles_1d/sample_softflow.png" height=150/>|<img src="generate1/2sines_1d/sample_softflow.png" height=150/>|<img src="generate1/target_1d/sample_softflow.png" height=150/>|
 
 2. Samples with the different noise distribution (`generate2.py`)
 
-|<img src="generate2/2spirals_1d/sample_softflow_csp-0.0.png" height=145/>|<img src="generate2/2spirals_1d/sample_softflow_csp-0.02.png" height=145/>|<img src="generate2/2spirals_1d/sample_softflow_csp-0.04.png" height=145/>|<img src="generate2/2spirals_1d/sample_softflow_csp-0.06.png" height=145/>|<img src="generate2/2spirals_1d/sample_softflow_csp-0.08.png" height=145/>|<img src="generate2/2spirals_1d/sample_softflow_csp-0.1.png" height=145/>|
+| Csp | 0.0 | 0.02 | 0.04 | 0.06 | 0.08 | 0.1 |
+|:---:|:---:|:----:|:----:|:----:|:----:|:---:|
+||<img src="generate2/2spirals_1d/sample_softflow_csp-0.0.png" height=145/>|<img src="generate2/2spirals_1d/sample_softflow_csp-0.02.png" height=145/>|<img src="generate2/2spirals_1d/sample_softflow_csp-0.04.png" height=145/>|<img src="generate2/2spirals_1d/sample_softflow_csp-0.06.png" height=145/>|<img src="generate2/2spirals_1d/sample_softflow_csp-0.08.png" height=145/>|<img src="generate2/2spirals_1d/sample_softflow_csp-0.1.png" height=145/>|
 
 ## References
 - FFJORD: https://github.com/rtqichen/ffjord
