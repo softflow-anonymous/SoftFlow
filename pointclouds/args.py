@@ -118,10 +118,6 @@ def get_args():
     parser = get_parser()
     args = parser.parse_args()
     if args.save_dir is None:
-        model_disc = 'Glow_grp-'+str(args.n_group)+'-flow-'+str(args.n_flow)+'-lyr-'+str(args.n_layers)+\
-                '-ch-'+str(args.n_channels)+'-mf-'+str(args.multi_freq)+'-mo-'+str(args.multi_out)+\
-                '_AF_flow-'+str(args.n_flow_AF)+'-hd-'+str(args.h_dims_AF)+'_noise_'+'M-'+str(args.std_max)+\
-                '-m-'+str(args.std_min)+'-scale-'+str(args.std_scale)
-        args.save_dir = os.path.join("results", args.cates[0], "proposed_model", model_disc)
+        args.save_dir = os.path.join("results", args.cates[0], "SoftPointFlow")
 
     return args

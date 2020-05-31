@@ -127,8 +127,6 @@ def main_worker(gpu, save_dir, ngpus_per_node, init_data, args):
         if args.distributed:
             train_sampler.set_epoch(epoch)
 
-        if epoch < args.stop_scheduler:
-            scheduler.step()
         if writer is not None:
             writer.add_scalar('lr/optimizer', scheduler.get_lr()[0], epoch)
 
@@ -161,6 +159,9 @@ def main_worker(gpu, save_dir, ngpus_per_node, init_data, args):
                          prior_nats, recon_nats, loss))
             del inputs, inputs_noisy, std_in, out, eps
             gc.collect()
+
+        if epoch < args.stop_scheduler:
+            scheduler.step()
 
         if epoch % args.valid_freq == 0:
             with torch.no_grad():
@@ -234,7 +235,7 @@ def main_worker(gpu, save_dir, ngpus_per_node, init_data, args):
 
                     results.append(res)
                 res = np.concatenate(results, axis=1)
-                imageio.imwrite(os.path.join(save_dir, 'images', 'proposed_epoch%d-gpu%s_recon_unseen.png' % (epoch, args.gpu)),
+                imageio.imwrite(os.path.join(save_dir, 'images', 'SPF_epoch%d-gpu%s_recon_unseen.png' % (epoch, args.gpu)),
                                 res.transpose(1, 2, 0))
                 if writer is not None:
                     writer.add_image('tr_vis/conditioned', torch.as_tensor(res), epoch)
@@ -247,7 +248,7 @@ def main_worker(gpu, save_dir, ngpus_per_node, init_data, args):
 
                     results.append(res)
                 res = np.concatenate(results, axis=1)
-                imageio.imwrite(os.path.join(save_dir, 'images', 'proposed_epoch%d-gpu%s_recon_seen.png' % (epoch, args.gpu)),
+                imageio.imwrite(os.path.join(save_dir, 'images', 'SPF_epoch%d-gpu%s_recon_seen.png' % (epoch, args.gpu)),
                                 res.transpose(1, 2, 0))
                 if writer is not None:
                     writer.add_image('tr_vis/conditioned', torch.as_tensor(res), epoch)
@@ -261,7 +262,7 @@ def main_worker(gpu, save_dir, ngpus_per_node, init_data, args):
                                                 pert_order=train_loader.dataset.display_axis_order)
                     results.append(res)
                 res = np.concatenate(results, axis=1)
-                imageio.imwrite(os.path.join(save_dir, 'images', 'proposed_epoch%d-gpu%s_sample.png' % (epoch, args.gpu)),
+                imageio.imwrite(os.path.join(save_dir, 'images', 'SPF_epoch%d-gpu%s_sample.png' % (epoch, args.gpu)),
                                 res.transpose((1, 2, 0)))
                 if writer is not None:
                     writer.add_image('tr_vis/sampled', torch.as_tensor(res), epoch)

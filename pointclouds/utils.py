@@ -1,5 +1,4 @@
 from pprint import pprint
-from sklearn.svm import LinearSVC
 from math import log, pi
 import os
 import torch
@@ -110,7 +109,7 @@ def visualize_point_clouds(pts, gtr, idx, pert_order=[0, 1, 2]):
     G = 30/255
     B = 45/255
     alpha = 0.4
-    COLOR = (R, G, B, alpha)
+    COLOR = [[R, G, B, alpha]]
 
     pts = pts.cpu().detach().numpy()[:, pert_order]
     gtr = gtr.cpu().detach().numpy()[:, pert_order]
@@ -176,47 +175,6 @@ def apply_random_rotation(pc, rot_axis=1):
     # (B, N, 3) mul (B, 3, 3) -> (B, N, 3)
     pc_rotated = torch.bmm(pc, rot)
     return pc_rotated, rot, theta
-
-
-def validate_classification(loaders, model, args):
-    train_loader, test_loader = loaders
-
-    def _make_iter_(loader):
-        iterator = iter(loader)
-        return iterator
-
-    tr_latent = []
-    tr_label = []
-    for data in _make_iter_(train_loader):
-        tr_pc = data['train_points']
-        tr_pc = tr_pc.cuda() if args.gpu is None else tr_pc.cuda(args.gpu)
-        latent = model.encode(tr_pc)
-        label = data['cate_idx']
-        tr_latent.append(latent.cpu().detach().numpy())
-        tr_label.append(label.cpu().detach().numpy())
-    tr_label = np.concatenate(tr_label)
-    tr_latent = np.concatenate(tr_latent)
-
-    te_latent = []
-    te_label = []
-    for data in _make_iter_(test_loader):
-        tr_pc = data['train_points']
-        tr_pc = tr_pc.cuda() if args.gpu is None else tr_pc.cuda(args.gpu)
-        latent = model.encode(tr_pc)
-        label = data['cate_idx']
-        te_latent.append(latent.cpu().detach().numpy())
-        te_label.append(label.cpu().detach().numpy())
-    te_label = np.concatenate(te_label)
-    te_latent = np.concatenate(te_latent)
-
-    clf = LinearSVC(random_state=0)
-    clf.fit(tr_latent, tr_label)
-    test_pred = clf.predict(te_latent)
-    test_gt = te_label.flatten()
-    acc = np.mean((test_pred == test_gt).astype(float)) * 100.
-    res = {'acc': acc}
-    print("Acc:%s" % acc)
-    return res
 
 
 def validate_conditioned(loader, model, args, max_samples=None, save_dir=None):

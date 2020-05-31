@@ -17,23 +17,23 @@ python train.py --data 2spirals_1d --dims 64-64-64 --std_min 0.0 --std_max 0.1 -
 
 To generate samples from the model, run:
 
-```generate
+```generate1
 python generate1.py --data 2spirals_1d --load_path results/2spirals_1d/SoftFlow/checkpt.pth
 ```
 
 or you can use the pretrained model:
-```generate
+```generate1_pretrained
 python generate1.py --data 2spirals_1d --load_path pretrained/2spirals_1d/checkpt.pth
 ```
 
 To generate samples with the different noise distributions, run:
 
-```generate
+```generate2
 python generate2.py --data 2spirals_1d --load_path results/2spirals_1d/SoftFlow/checkpt.pth
 ```
 
 or you can use the pretrained model:
-```generate
+```generate2_pretrained
 python generate2.py --data 2spirals_1d --load_path pretrained/2spirals_1d/checkpt.pth
 ```
 
