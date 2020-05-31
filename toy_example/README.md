@@ -2,8 +2,57 @@
 
 
 ## Requirements
- Flow-based generative models are composed of invertible transformations between two random variables of the same dimension. Therefore, flow-based models cannot be adequately trained if the dimension of the data distribution does not match that of the underlying target distribution. In this paper, we propose SoftFlow, a probabilistic framework for training normalizing flows on manifolds. To sidestep the dimension mismatch problem, SoftFlow estimates a conditional distribution of the perturbed input data instead of learning the data distribution directly. We experimentally show that SoftFlow can capture the innate structure of the manifold data and generate high-quality samples unlike the conventional flow-based models. Furthermore, we apply the proposed framework to 3D point clouds to alleviate the difficulty of forming thin structures for flow-based models. The proposed model for 3D point clouds, namely SoftPointFlow, can estimate the distribution of various shapes more accurately and achieves state-of-the-art performance in point cloud generation. 
+- python 3.8.3
+- matplotlib
+- pytorch 1.5
+- sklearn
+- torchdiffeq
 
+## Training
+```train
+python train.py --data 2spirals_1d --dims 64-64-64 --std_min 0.0 --std_max 0.1 --std_weight 2
+```
+> Datasets: 2spirals_1d, swissroll_1d, circles_1d, 2sines_1d, circles_1d
+
+## Generation
+
+To generate samples from the model, run:
+
+```generate
+python generate1.py --data 2spirals_1d --load_path results/2spirals_1d/SoftFlow/checkpt.pth
+```
+
+or you can use the pretrained model
+```generate
+python generate1.py --data 2spirals_1d --load_path pretrained_toy/2spirals_1d/checkpt.pth
+```
+
+To generate samples with the different noise distributions, run:
+
+```generate
+python generate2.py --data 2spirals_1d --load_path results/2spirals_1d/SoftFlow/checkpt.pth
+```
+
+or you can use the pretrained model
+```generate
+python generate2.py --data 2spirals_1d --load_path pretrained_toy/2spirals_1d/checkpt.pth
+```
+
+## Pre-trained models
+- Click this [link](https://drive.google.com/open?id=19VzLEOZkr8swP24KUu7EikDpwsy6SX3y) to download the pre-trained models.
+```
+unzip pretrained_toy.zip
+```
+
+## Results
+1. Samples from SoftFlow (`generate1.py`)
+|               | 2spirals | swissroll | circles | 2sines | target |
+|:-------------:|:--------:|:---------:|:-------:|:------:|:------:|
+|      Data     |          |           |         |        |        |
+| SoftPointFlow |          |           |         |        |        |
+<p align="center">
+    <img src="generate1/2spirals_1d/sample_softflow.png" height=450/>
+</p>
 
 ## References
 - FFJORD: https://github.com/rtqichen/ffjord

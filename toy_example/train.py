@@ -51,7 +51,6 @@ parser.add_argument('--std_min', type=float, default=0.0)
 parser.add_argument('--std_max', type=float, default=0.1)
 parser.add_argument('--std_weight', type=float, default=2)
 
-parser.add_argument('--save', type=str, default='experiments/cnf')
 parser.add_argument('--viz_freq', type=int, default=100)
 parser.add_argument('--val_freq', type=int, default=400)
 parser.add_argument('--log_freq', type=int, default=10)
@@ -59,7 +58,7 @@ parser.add_argument('--gpu', type=int, default=0)
 args = parser.parse_args()
 
 # logger
-save_path = 'results/' + args.data + '/proposed' + '_smin-' +str(args.std_min) + '_smax-' + str(args.std_max)
+save_path = 'results/' + args.data + '/SoftFlow'
 utils.makedirs(save_path)
 logger = utils.get_logger(logpath=os.path.join(save_path, 'logs'), filepath=os.path.abspath(__file__))
 

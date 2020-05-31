@@ -1,6 +1,6 @@
 # SoftFlow: Probabilistic Framework for Normalizing Flow on Manifolds
 
-This repository provides the implementation of SoftFlow on toy dataset and point clouds. Move to each folder, follow the instructions to reproduce the experiments and enjoy the results!
+This repository provides the implementation of SoftFlow on toy dataset and point clouds. Move to each folder, follow the instructions and enjoy the results!
 
 ## Overview
 <p align="center">
@@ -11,7 +11,7 @@ This repository provides the implementation of SoftFlow on toy dataset and point
 ## Results
 - Toy datasets
 <p align="center">
-    <img src="assets/toy_results.png" height=512/>
+    <img src="assets/toy_results.png" height=450/>
 </p>
 
 - Point Clouds
@@ -23,3 +23,4 @@ This repository provides the implementation of SoftFlow on toy dataset and point
 ## References
 - FFJORD: https://github.com/rtqichen/ffjord
 - PointFlow: https://github.com/stevenygd/PointFlow
+- WaveGlow: https://github.com/NVIDIA/waveglow

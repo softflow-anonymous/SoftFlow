@@ -42,12 +42,13 @@ parser.add_argument('--test_batch_size', type=int, default=1000)
 parser.add_argument('--lr', type=float, default=1e-3)
 parser.add_argument('--weight_decay', type=float, default=1e-5)
 
+parser.add_argument('--load_path', type=str, default='pretrained_toy/2spiarls/checkpt.pth')
+
 # for the proposed method
 parser.add_argument('--std_min', type=float, default=0.0)
 parser.add_argument('--std_max', type=float, default=0.1)
 parser.add_argument('--std_weight', type=float, default=2)
 
-parser.add_argument('--save', type=str, default='experiments/cnf')
 parser.add_argument('--viz_freq', type=int, default=100)
 parser.add_argument('--val_freq', type=int, default=400)
 parser.add_argument('--log_freq', type=int, default=10)
@@ -109,7 +110,7 @@ if __name__ == '__main__':
     save_fig(sample_real, COLOR, 'D', 0.1, save_path, 'sample_data')
 
     softflow = build_model_tabular(args, 2).to(device)
-    softflow_path = 'pretrained/' + args.data + '/checkpt.pth'
+    softflow_path = args.load_path
     ckpt_softflow = torch.load(softflow_path)
     softflow.load_state_dict(ckpt_softflow['state_dict'])
     softflow.eval()
