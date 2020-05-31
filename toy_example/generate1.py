@@ -42,7 +42,7 @@ parser.add_argument('--test_batch_size', type=int, default=1000)
 parser.add_argument('--lr', type=float, default=1e-3)
 parser.add_argument('--weight_decay', type=float, default=1e-5)
 
-parser.add_argument('--load_path', type=str, default='pretrained_toy/2spiarls/checkpt.pth')
+parser.add_argument('--load_path', type=str, default='pretrained/2spiarls/checkpt.pth')
 
 # for the proposed method
 parser.add_argument('--std_min', type=float, default=0.0)
