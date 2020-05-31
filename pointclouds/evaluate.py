@@ -93,10 +93,10 @@ def main(args):
 
     model = model.cuda()
     model.multi_gpu_wrapper(_transform_)
-    print("Resume Path:%s" % args.pretrained_checkpoint)
+    print("Load Path:%s" % args.load_checkpoint)
     print('test_std_n:', args.test_std_n)
     print('test_std_z:', args.test_std_z)
-    checkpoint = torch.load(args.pretrained_checkpoint)
+    checkpoint = torch.load(args.load_checkpoint)
     model.load_state_dict(checkpoint['model'])
     model.set_initialized(True)
     model.eval()

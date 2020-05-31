@@ -112,8 +112,8 @@ def main(args):
     softpointflow = softpointflow.cuda()
     softpointflow.multi_gpu_wrapper(_transform_)
 
-    print("pretrained_checkpoint:%s" % args.pretrained_checkpoint)
-    checkpoint = torch.load(args.pretrained_checkpoint)
+    print("load_checkpoint:%s" % args.load_checkpoint)
+    checkpoint = torch.load(args.load_checkpoint)
     softpointflow.load_state_dict(checkpoint["model"])
     softpointflow.set_initialized(True)
     softpointflow.eval()

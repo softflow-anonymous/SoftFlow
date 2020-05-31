@@ -86,7 +86,7 @@ def viz_save_sample(pts_SPF_batch, file_path, color, resize_scale, pert_order=[0
 def gen_samples(softpointflow, save_dir, color, resize_scale, args):
     tr_dataset = get_trainset(args)
     te_dataset = get_testset(args)
-    
+
     train_loader = torch.utils.data.DataLoader(
         dataset=tr_dataset, batch_size=NUM_SAMPLE, shuffle=False,
         num_workers=0, pin_memory=True, drop_last=True,
@@ -174,8 +174,8 @@ def main(args):
     softpointflow = softpointflow.cuda()
     softpointflow.multi_gpu_wrapper(_transform_)
 
-    print("pretrained_checkpoint:%s" % args.pretrained_checkpoint)
-    checkpoint = torch.load(args.pretrained_checkpoint)
+    print("load_checkpoint:%s" % args.load_checkpoint)
+    checkpoint = torch.load(args.load_checkpoint)
     softpointflow.load_state_dict(checkpoint["model"])
     softpointflow.set_initialized(True)
     softpointflow.eval()

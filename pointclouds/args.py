@@ -46,9 +46,9 @@ def add_args(parser):
     parser.add_argument('--epochs', type=int, default=15000,
                         help='Number of epochs for training (default: 12000)')
     parser.add_argument('--resume_checkpoint', type=str, default=None,
-                    help='Path to the checkpoint to be loaded.')
-    parser.add_argument('--pretrained_checkpoint', type=str, default=None,
-                    help='Path to the checkpoint to be loaded.')
+                    help='Path to the checkpoint to be loaded for training.')
+    parser.add_argument('--load_checkpoint', type=str, default=None,
+                    help='Path to the checkpoint to be loaded for genration and test.')
     parser.add_argument('--seed', type=int, default=1234,
                         help='Seed for initializing training. ')
 

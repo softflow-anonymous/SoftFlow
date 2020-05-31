@@ -6,7 +6,7 @@ test_std_n=0.00
 
 python generate2.py \
     --cates ${cates} \
-    --pretrained_checkpoint results/${cates}/SoftPointFlow/checkpoint-best.pt \
+    --load_checkpoint results/${cates}/SoftPointFlow/checkpoint-best.pt \
     --te_max_sample_points 10000 \
     --tr_max_sample_points 10000 \
     --n_flow 12 \

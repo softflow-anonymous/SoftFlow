@@ -49,7 +49,6 @@ Requirements (see `install.sh` in [here](https://github.com/stevenygd/PointFlow)
 cd metrics/pytorch_structural_losses/
 make clean
 make
-cd $root
 ```
 
 To evaluate the model, run:
