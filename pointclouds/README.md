@@ -76,9 +76,9 @@ unzip pretrained_pc.zip
 
 2. Samples with the different latent variable distributions (`generate2.py`)
 
-- Airplane
+- Chair
 <p align="center">
-    <img src="assets/generate2/chair/results_1.png" height=256/>
+    <img src="assets/generate2/chair/result_1.png" height=128/>
 </p>
 
 ## References

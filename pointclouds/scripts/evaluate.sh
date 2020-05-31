@@ -7,7 +7,7 @@ test_std_z=1.0
 
 python evaluate.py \
     --cates ${cates} \
-    --pretrained_checkpoint runs/${cates}/SoftPointFlow/checkpoint-best.pt \
+    --pretrained_checkpoint results/${cates}/SoftPointFlow/checkpoint-best.pt \
     --n_flow 12 \
     --multi_freq 4 \
     --n_flow_AF 9 \
