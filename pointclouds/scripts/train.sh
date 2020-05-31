@@ -12,7 +12,7 @@ for (( i = 1000; i <= 15000; i=i+1000)); do
         --n_flow_AF 9 \
         --h_dims_AF 256-256-256 \
         --save_freq 400 \
-        --valid-freq 100 \
+        --valid_freq 100 \
         --viz_freq 400 \
         --log_freq 1
     echo "Done"

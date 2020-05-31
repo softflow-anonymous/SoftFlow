@@ -1,11 +1,14 @@
 # SoftFlow: Probabilistic Framework for Normalizing Flow on Manifolds
 
 ## Requirements
-- python 3.8.3
-- pytorch 1.5
+- python 3.6.10
+- pytorch 1.0.1
+- gcc 7.5
 - matplotlib
 - tensorboardX
 - imageio
+- scipy
+- sklearn
 
 ## Dataset
 ShapeNetCore (Ver.2): Click [here](https://github.com/stevenygd/PointFlow) and follow the instructions. 
@@ -40,6 +43,14 @@ CUDA_VISIBLE_DEVICES=0 bash scripts/generate2_pretrained.sh
 ```
 
 ## Evaluation
+
+Requirements (see `install.sh` in [here](https://github.com/stevenygd/PointFlow), we tested the code with pytorch 1.0.1 and gcc 7.5):
+```requirements
+cd metrics/pytorch_structural_losses/
+make clean
+make
+cd $root
+```
 
 To evaluate the model, run:
 

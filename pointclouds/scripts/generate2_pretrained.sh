@@ -1,7 +1,7 @@
 #! /bin/bash
 
 
-cates="airplane"
+cates="chair"
 test_std_n=0.00
 
 python generate2.py \

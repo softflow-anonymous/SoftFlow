@@ -1,9 +1,9 @@
 # SoftFlow: Probabilistic Framework for Normalizing Flow on Manifolds
 
 ## Requirements
-- python 3.8.3
+- python 3.6.10
+- pytorch 1.0.1
 - matplotlib
-- pytorch 1.5
 - sklearn
 - torchdiffeq
 
